@@ -1,0 +1,17 @@
+[
+{
+  "modid": "military",
+  "name": "Military",
+  "description": "Adds all sorts of military weapons and vehicles",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["thislooksfun"],
+  "credits": "",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
