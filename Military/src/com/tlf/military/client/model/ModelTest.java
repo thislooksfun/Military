@@ -5,6 +5,7 @@ import com.tlf.military.entity.bases.vehicle.EntityVehicleBase;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,13 +23,14 @@ public class ModelTest extends ModelBase
 	/**
 	 * Sets the models various rotation angles then renders the model.
 	 */
-	 public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
-	 {
-		 if (par1Entity instanceof EntityVehicleBase) {
-			 EntityVehicleBase entityVB = (EntityVehicleBase)par1Entity;
-			 
-			 this.body.rotateAngleX = entityVB.getRoll();
-			 this.body.render(par7);
-		 }
-	 }
+	@Override
+	public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
+	{
+		if (par1Entity instanceof EntityVehicleBase) {
+			EntityVehicleBase entityVB = (EntityVehicleBase)par1Entity;
+			
+			this.body.rotateAngleX = entityVB.getRoll();
+			this.body.render(par7);
+		}
+	}
 }

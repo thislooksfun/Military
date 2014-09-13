@@ -58,6 +58,7 @@ public class RenderTest extends Render
 	/**
 	 * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
 	 */
+	@Override
 	protected ResourceLocation getEntityTexture(Entity par1Entity)
 	{
 		return this.getEntityTexture((EntityVehicleBase)par1Entity);
@@ -69,6 +70,7 @@ public class RenderTest extends Render
 	 * (Render<T extends Entity) and this method has signature public void func_76986_a(T entity, double d, double d1,
 	 * double d2, float f, float f1). But JAD is pre 1.5 so doesn't do that.
 	 */
+	@Override
 	public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
 	{
 		this.doRender((EntityVehicleBase)par1Entity, par2, par4, par6, par8, par9);

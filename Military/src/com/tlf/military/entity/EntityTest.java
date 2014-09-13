@@ -19,6 +19,7 @@ public class EntityTest extends EntityVehicleBase
 		this.yOffset = this.height / 2.0F;
 	}
 	
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
@@ -31,6 +32,7 @@ public class EntityTest extends EntityVehicleBase
 	 * Returns a boundingBox used to collide the entity with other entities and blocks. This enables the entity to be
 	 * pushable on contact, like boats or minecarts.
 	 */
+	@Override
 	public AxisAlignedBB getCollisionBox(Entity par1Entity)
 	{
 		return par1Entity.boundingBox;
@@ -39,6 +41,7 @@ public class EntityTest extends EntityVehicleBase
 	/**
 	 * returns the bounding box for this entity
 	 */
+	@Override
 	public AxisAlignedBB getBoundingBox()
 	{
 		return this.boundingBox;
@@ -47,6 +50,7 @@ public class EntityTest extends EntityVehicleBase
 	/**
 	 * Returns true if this entity should push and be pushed by other entities when colliding.
 	 */
+	@Override
 	public boolean canBePushed()
 	{
 		return true;
@@ -55,6 +59,7 @@ public class EntityTest extends EntityVehicleBase
 	/**
 	 * Returns the Y offset from the entity's position for any entity riding this one.
 	 */
+	@Override
 	public double getMountedYOffset()
 	{
 		return (double)this.height * 0.0D - 0.30000001192092896D;
@@ -63,6 +68,7 @@ public class EntityTest extends EntityVehicleBase
 	/**
 	 * Returns true if other Entities should be prevented from moving through this Entity.
 	 */
+	@Override
 	public boolean canBeCollidedWith()
 	{
 		return true;
@@ -71,12 +77,14 @@ public class EntityTest extends EntityVehicleBase
 	/**
 	 * Called to update the entity's position/logic.
 	 */
+	@Override
 	public void onUpdate()
 	{
 		super.onUpdate();
 		//TODO
 	}
 	
+	@Override
 	public void updateRiderPosition()
 	{
 		if (this.riddenByEntity != null)
@@ -87,6 +95,7 @@ public class EntityTest extends EntityVehicleBase
 		}
 	}
 	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public float getShadowSize()
 	{
@@ -96,6 +105,7 @@ public class EntityTest extends EntityVehicleBase
 	/**
 	 * First layer of player interaction
 	 */
+	@Override
 	public boolean interactFirst(EntityPlayer par1EntityPlayer)
 	{
 		if (this.riddenByEntity != null && this.riddenByEntity instanceof EntityPlayer && this.riddenByEntity != par1EntityPlayer)
